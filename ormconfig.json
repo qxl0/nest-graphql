@@ -1,0 +1,12 @@
+{
+  "type": "mssql",
+  "host": "ambdb18",
+  "port": 1433,
+  "username": "ambdev",
+  "password": "bbbbbb",
+  "database": "amb_dev_212",
+  "synchronize": true,
+  "options": {
+    "trustServerCertificate": true
+  }
+}
