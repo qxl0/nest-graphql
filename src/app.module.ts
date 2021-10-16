@@ -5,14 +5,17 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Connection } from 'typeorm';
 import { UsersModule } from './users/users.module';
+import { PrescriptionsModule } from './prescriptions/prescriptions.module';
 
 @Module({
   imports: [
+    PrescriptionsModule,
     UsersModule,
     GraphQLModule.forRoot({
       autoSchemaFile: 'schema.gql',
     }),
     TypeOrmModule.forRoot(),
+    PrescriptionsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

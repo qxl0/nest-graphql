@@ -6,6 +6,7 @@
   "password": "bbbbbb",
   "database": "amb_dev_212",
   "synchronize": false,
+  "logging": true,
   "entities": [
     "dist/**/*.entity.js"
   ],

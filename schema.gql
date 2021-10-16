@@ -7,7 +7,42 @@ type User {
   DisplayName: String!
 }
 
+type Prescription {
+  PrescriptionID: Float!
+  DrugName: String!
+  TouchedWhen: DateTime!
+  TouchedBy: String!
+  CreatedWhen: DateTime!
+  CreatedBy: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
 type Query {
+  prescriptions: [Prescription!]!
+  prescription(id: Int!): Prescription!
+  findByName(drugname: String!): [Prescription!]!
   hello: String!
   users: [User!]!
+  user(id: Float!): User!
+}
+
+type Mutation {
+  createPrescription(createPrescriptionInput: CreatePrescriptionInput!): Prescription!
+  updatePrescription(updatePrescriptionInput: UpdatePrescriptionInput!): Prescription!
+  removePrescription(id: Int!): Prescription!
+}
+
+input CreatePrescriptionInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdatePrescriptionInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
 }
