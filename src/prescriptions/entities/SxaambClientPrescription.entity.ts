@@ -481,10 +481,10 @@ export class SxaambClientPrescription {
   @Field()
   @Column("int", { name: "eRXTransDetailID", nullable: true })
   eRxTransDetailId: number | null;
-
+  @Field()
   @Column("datetime", { name: "Response271DTM", nullable: true })
   response271Dtm: Date | null;
-
+  @Field()
   @Column("numeric", {
     name: "DoseCalcHeightCm",
     nullable: true,
@@ -492,7 +492,7 @@ export class SxaambClientPrescription {
     scale: 2,
   })
   doseCalcHeightCm: number | null;
-
+  @Field()
   @Column("numeric", {
     name: "DoseCalcWeightKg",
     nullable: true,
@@ -500,10 +500,10 @@ export class SxaambClientPrescription {
     scale: 4,
   })
   doseCalcWeightKg: number | null;
-
+  @Field()
   @Column("varchar", { name: "RxNormCUI", nullable: true, length: 20 })
   rxNormCui: string | null;
-
+  @Field()
   @Column("varchar", { name: "RxNormQualifier", nullable: true, length: 40 })
   rxNormQualifier: string | null;
 }
